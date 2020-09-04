@@ -9,23 +9,23 @@ resources:
 variables:
   - group: acrDetails
   - name: dockerRegistryServiceConnection
-    value: <ACR_CONNECTION_NAME>
+    value: webGoatACR
   - name: imageRepository
-    value: 'webgoat-8.0'
+    value: 'webgoat-8.1'
   - name: dockerfilePath
     value: 'webgoat-server/Dockerfile'
   - name: tag
     value: '$(Build.BuildId)'
   - name: resourceGroup
-    value: <RESOURCE_GROUP_NAME>
+    value: webGoatRG
   - name: acrRegistry
-    value: <ACR_ADDRESS>
+    value: acrwebg0at.azurecr.io
   - name: subscriptionConnection
-    value: <SUBCRIPTION_CONNECTION_NAME>
+    value: webGoatARM
   - name: containerGroup
-    value: <CONTAINER GROUP>
+    value: webgoat-app
   - name: containerDNS
-    value: <CONTAINER DNS LABEL>
+    value: webgoatdevsecops
 
 # build steps to build and push WebGoat container to ACR
 stages:
