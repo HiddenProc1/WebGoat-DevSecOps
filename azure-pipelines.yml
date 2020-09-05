@@ -27,21 +27,9 @@ variables:
   - name: containerDNS
     value: webgoatdevsecops
 
-# SonarCloud Prepare Task
-stages:
-- stage: SonarScan
-  displayName: Sonar Stage
-  jobs:
-  - job: Scan
-    displayName: Sonar Scanner
-
-    steps:
-    - task: SonarQubePrepare@4
-      inputs:
-        SonarQube: 'sonartoken'
-        scannerMode: 'Other'
 
 # build steps to build and push WebGoat container to ACR
+stages:
 - stage: Build
   displayName: Build stage
   jobs:  
@@ -51,10 +39,17 @@ stages:
       vmImage: 'ubuntu-latest'
 
     steps:
+    - task: SonarQubePrepare@4
+      displayName: Prepare For SonarCloud Scanning
+      inputs:
+        SonarQube: 'sonarcloud'
+        scannerMode: 'Other'
+    
     - task: Maven@1
       displayName: Maven
       inputs:
         mavenPomFile: 'pom.xml'
+        goals: 'clean verify sonar:sonar
         mavenOptions: '-Xmx3072m'
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '1.11'
@@ -62,6 +57,14 @@ stages:
         publishJUnitResults: true
         testResultsFiles: '**/TEST-*.xml'
         mavenVersionOption: 'Default'
+        codeCoverageToolOption: JaCoCo
+    
+    - task: SonarCloudAnalyze@1
+      displayName: Run Sonarcloud Analysis
+    
+    - task: SonarCloudPublish@1
+      inputs:
+        pollingTimeoutSec: '300'
 
     - task: Docker@2
       displayName: Build and push an WebGoat image to container registry
