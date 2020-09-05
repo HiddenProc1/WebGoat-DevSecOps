@@ -31,6 +31,9 @@ variables:
 stages:
 - stage: SonarScan
   displayName: Sonar Stage
+  jobs:
+  - job: Scan
+    displayName: Sonar Scanner
 
     steps:
     - task: SonarQubePrepare@4
