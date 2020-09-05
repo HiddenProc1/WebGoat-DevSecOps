@@ -57,7 +57,6 @@ stages:
         publishJUnitResults: true
         testResultsFiles: '**/TEST-*.xml'
         mavenVersionOption: 'Default'
-        codeCoverageToolOption: JaCoCo
     
     - task: SonarCloudAnalyze@1
       displayName: Run Sonarcloud Analysis
