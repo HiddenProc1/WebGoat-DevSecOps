@@ -32,11 +32,11 @@ stages:
 - stage: SonarScan
   displayName: Sonar Stage
 
-  steps:
-  - task: SonarQubePrepare@4
-    inputs:
-      SonarQube: 'sonartoken'
-      scannerMode: 'Other'
+    steps:
+    - task: SonarQubePrepare@4
+      inputs:
+        SonarQube: 'sonartoken'
+        scannerMode: 'Other'
 
 # build steps to build and push WebGoat container to ACR
 - stage: Build
