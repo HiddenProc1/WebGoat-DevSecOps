@@ -53,7 +53,7 @@ stages:
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '1.11'
         jdkArchitectureOption: 'x64'
-        goals: 'clean verify sonar:sonar'
+        goals: 'sonar:sonar'
         testResultsFiles: '**/TEST-*.xml'
         mavenVersionOption: 'Default'
     
