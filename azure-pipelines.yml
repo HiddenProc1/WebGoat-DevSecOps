@@ -27,8 +27,18 @@ variables:
   - name: containerDNS
     value: webgoatdevsecops
 
-# build steps to build and push WebGoat container to ACR
+# SonarCloud Prepare Task
 stages:
+- stage: SonarScan
+  displayName: Sonar Stage
+
+  steps:
+  - task: SonarQubePrepare@4
+    inputs:
+      SonarQube: 'sonartoken'
+      scannerMode: 'Other'
+
+# build steps to build and push WebGoat container to ACR
 - stage: Build
   displayName: Build stage
   jobs:  
