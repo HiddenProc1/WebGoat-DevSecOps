@@ -49,11 +49,11 @@ stages:
       displayName: Maven
       inputs:
         mavenPomFile: 'pom.xml'
+        goals: 'clean verify sonar:sonar'
         mavenOptions: '-Xmx3072m'
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '1.11'
         jdkArchitectureOption: 'x64'
-        goals: 'sonar:sonar'
         testResultsFiles: '**/TEST-*.xml'
         mavenVersionOption: 'Default'
     
