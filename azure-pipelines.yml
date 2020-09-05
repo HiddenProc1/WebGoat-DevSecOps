@@ -53,11 +53,12 @@ stages:
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '1.11'
         jdkArchitectureOption: 'x64'
-        publishJUnitResults: true
-        sonarQubeRunAnalysis: true
+        goals: 'clean verify sonar:sonar'
         sqMavenPluginVersionChoice: 'latest'
         testResultsFiles: '**/TEST-*.xml'
         mavenVersionOption: 'Default'
+    
+    - task: SonarCloudAnalyze@1
 
     - task: SonarCloudPublish@1
       inputs:
