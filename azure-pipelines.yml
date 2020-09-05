@@ -43,6 +43,7 @@ stages:
       displayName: Prepare For SonarCloud Scanning
       inputs:
         SonarQube: 'sonarcloud'
+        sonarOrganization: 'hiddenproc1'
         scannerMode: 'Other'
     
     - task: Maven@1
