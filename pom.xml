@@ -135,6 +135,11 @@
         <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
+	    
+	<!-- Organization and project keys are displayed in the right sidebar of the project homepage -->
+        <sonar.organization>webgoatdevsecops</sonar.organization>
+        <sonar.projectKey>webg0at_dev</sonar.projectKey>
+        <sonar.login>webg0at_dev</sonar.login>
     </properties>
 
     <modules>
@@ -192,6 +197,13 @@
 </build>
 
 <profiles>
+	<id>sonar</id>
+            <properties>
+                <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+                <sonar.organization>webgoatdevsecops</sonar.organization>
+        	<sonar.projectKey>webg0at_dev</sonar.projectKey>
+        	<sonar.login>webg0at_dev</sonar.login>
+            </properties>
 	<profile>
 		<id>defaultProfile</id>
 		<activation>
