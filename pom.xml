@@ -138,8 +138,8 @@
 	    
 	<!-- Organization and project keys are displayed in the right sidebar of the project homepage -->
         <sonar.organization>webgoatdevsecops</sonar.organization>
-        <sonar.projectKey>webg0at_dev</sonar.projectKey>
-        <sonar.login>webg0at_dev</sonar.login>
+        <sonar.projectKey>WebGoatDev</sonar.projectKey>
+        <sonar.login>outlineserver@protonmail.com</sonar.login>
     </properties>
 
     <modules>
