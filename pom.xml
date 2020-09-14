@@ -197,13 +197,6 @@
 </build>
 
 <profiles>
-	<id>sonar</id>
-            <properties>
-                <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-                <sonar.organization>webgoatdevsecops</sonar.organization>
-        	<sonar.projectKey>webg0at_dev</sonar.projectKey>
-        	<sonar.login>webg0at_dev</sonar.login>
-            </properties>
 	<profile>
 		<id>defaultProfile</id>
 		<activation>
