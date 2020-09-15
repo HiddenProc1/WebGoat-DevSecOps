@@ -143,13 +143,6 @@
 	<sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
     </properties>
 
-	<sonar.projectKey>
-		WebGoatDev
-	</sonar.projectKey>
-	<sonar.moduleKey>
-		${project.groupId}:${project.artifactId}
-	</sonar.moduleKey>
-
     <modules>
         <module>webgoat-container</module>
         <module>webgoat-lessons</module>
