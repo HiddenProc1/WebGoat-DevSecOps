@@ -140,16 +140,15 @@
         <sonar.organization>webgoatdevsecops</sonar.organization>
         <sonar.projectKey>WebGoatDev</sonar.projectKey>
         <sonar.login>outlineserver@protonmail.com</sonar.login>
+	<sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
     </properties>
 
-    <properties>
 	<sonar.projectKey>
 		WebGoatDev
 	</sonar.projectKey>
 	<sonar.moduleKey>
 		${project.groupId}:${project.artifactId}
 	</sonar.moduleKey>
-    </properties>
 
     <modules>
         <module>webgoat-container</module>
