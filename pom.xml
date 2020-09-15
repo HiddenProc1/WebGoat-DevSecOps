@@ -142,6 +142,15 @@
         <sonar.login>outlineserver@protonmail.com</sonar.login>
     </properties>
 
+    <properties>
+	<sonar.projectKey>
+		WebGoatDev
+	</sonar.projectKey>
+	<sonar.moduleKey>
+		${project.groupId}:${project.artifactId}
+	</sonar.moduleKey>
+    </properties>
+
     <modules>
         <module>webgoat-container</module>
         <module>webgoat-lessons</module>
